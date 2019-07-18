@@ -1,0 +1,32 @@
+/*  At 460px change the layout of the squares */
+section {
+    box-sizing: border-box;
+    width: 100%;
+}
+header {
+    max-height: 10vh;
+    border-bottom: 1px solid lightgray;
+}
+.game-box {
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 25px;
+    padding:15px;
+}
+
+div[id^="row-"] {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+  }
+sqr {
+    margin: 5px;
+    border-radius: 5px;
+    height: 70px;
+    width: 70px;
+    border: 1px solid black;
+    -webkit-box-shadow: 3px 1px 8px 1px rgba(103, 103, 103, 0.75);
+    -moz-box-shadow: 3px 1px 8px 1px rgba(103, 103, 103, 0.75);
+    box-shadow: 3px 1px 8px 1px rgba(103, 103, 103, 0.75);
+    cursor: pointer;
+}

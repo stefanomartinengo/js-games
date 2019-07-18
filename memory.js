@@ -1,0 +1,4 @@
+/*
+The purpose of this section is to maintain memory throughout the different variables to maintain cleaner
+Code throughout the rest of the application
+*/
