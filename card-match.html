@@ -14,11 +14,17 @@
             <h3> Match The Cards </h3>
             <h5> <a href="index.html">Back to Main</a></h5>
         </header>
-        <p style="text-align: center">tries</p><p style="text-align: center" id="tries">0</p>
+        <p style="text-align: center; font-size: 24px">Tries</p><p style="text-align: center; font-size: 22px" id="tries">0</p>
         <div id="game-box" class="game-box">
                 <div id="row-1">
-                    <sqr onClick="flip(event)"></sqr>
-                    <sqr onClick="flip(event)"></sqr>
+                    <sqr class="content" onClick="flip(event)">
+                        <div class="front"></div>
+                        <div class="back"></div>
+                    </sqr>
+                    <sqr onClick="flip(event)">
+                        <div class="front"></div>
+                        <div class="back"></div>
+                    </sqr>
                     <sqr onClick="flip(event)"></sqr>
                     <sqr onClick="flip(event)"></sqr>
                 </div>

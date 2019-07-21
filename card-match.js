@@ -36,6 +36,8 @@ let matches = [];
 let tries = document.getElementById("tries");
 
 function flip(e) {
+    console.log(e.target.parentNode, 'parentNode')
+    e.target.classList.add('flip')
     if(flipCt < 2) {
         flipArr.push(e.target.children[0])
         e.target.children[0].style.display="inline"
@@ -59,7 +61,7 @@ function flip(e) {
                 flipArr[1].style.display = "none";
                 flipArr = [];
                 flipCt = 0;
-            }, 1000);
+            }, 800);
         }
     }
 }
