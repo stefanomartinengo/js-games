@@ -1,6 +1,7 @@
 /*
     * pull icons/images for game
     * set difficulties
+    * reset btn
     * Sound when card clicked
 */
 
