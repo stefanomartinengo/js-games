@@ -59,7 +59,6 @@ function flip(e) {
         } else {
             ++tries.innerHTML;
             setTimeout( () => {
-                console.log(flipArr[0])
                 flipArr[0].style.display = "none";
                 flipArr[1].style.display = "none";
                 flipArr[0].parentNode.removeAttribute("class");

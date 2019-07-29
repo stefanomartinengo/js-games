@@ -49,3 +49,46 @@ sqr p {
     box-shadow: inset 3px 1px 8px 1px rgba(103, 103, 103, 0.75);
     transition: all .8s;
 }
+ul {
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+    padding: 5px 0px;
+    font-size: 18px;
+}
+li {
+    padding: 3px;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(105, 94, 94);
+}
+
+header {
+    padding: 5px;
+    margin-bottom: 10px;
+    font-size: 32px;
+}
+header h3 {
+    text-align: center;
+    font-size: 24px;
+    padding: 5px
+}
+header h5 {
+    position: absolute;
+    top: 0px;
+    left: 5px;
+    font-size: 32px;
+    margin-top: 3px;
+}
+header a {
+    text-decoration: none;
+    color:rgb(51, 97, 222);
+}
+header a:hover {
+    transition: all .4s;
+    color: rgb(129, 180, 224);
+}
