@@ -1,9 +1,7 @@
 /*
     * pull icons/images for game
-    * dom game-setup
     * set difficulties
-    * animate card turning
-        *** 1.1,1.2,1.3,1.4,2.1,2.2,2.3
+    * Sound when card clicked
 */
 
 // -----------------------------SETUP----------------------------- //
@@ -36,10 +34,9 @@ let matches = [];
 let tries = document.getElementById("tries");
 
 function flip(e) {
-    console.log(e.target.parentNode, 'parentNode')
     e.target.classList.add('flip')
     if(flipCt < 2) {
-        flipArr.push(e.target.children[0])
+        flipArr.push(e.target.children[0]);
         e.target.children[0].style.display="inline"
         e.target.children[0].style.fontSize="2em";
         e.target.children[0].style.display="flex";
@@ -49,13 +46,19 @@ function flip(e) {
     };
     if( flipCt === 2) {
         if(flipArr[0].innerHTML === flipArr[1].innerHTML) {
+            matches.push(Number(flipArr[0].innerHTML));
+            matches.push(Number(flipArr[1].innerHTML));
             flipCt = 0;
-            matches = [...flipArr];
             flipArr[0].parentNode.removeAttribute("onclick");
             flipArr[0].parentNode.classList.add("flipped");
             flipArr[1].parentNode.classList.add("flipped");
             flipArr[1].parentNode.removeAttribute("onclick");
             flipArr = [];
+            if(matches.length == cards.length) {
+                setTimeout( ()=> {
+                    alert('Great job! You did it!')
+                },500)
+            }
         } else {
             ++tries.innerHTML;
             setTimeout( () => {
@@ -67,5 +70,5 @@ function flip(e) {
                 flipCt = 0;
             }, 800);
         }
-    }
+    };
 }
