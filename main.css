@@ -1,4 +1,7 @@
 /*  At 460px change the layout of the squares */
+html {
+    font-family: Helvetica;
+}
 section {
     box-sizing: border-box;
     width: 100%;
