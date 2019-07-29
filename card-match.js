@@ -52,13 +52,18 @@ function flip(e) {
             flipCt = 0;
             matches = [...flipArr];
             flipArr[0].parentNode.removeAttribute("onclick");
+            flipArr[0].parentNode.classList.add("flipped");
+            flipArr[1].parentNode.classList.add("flipped");
             flipArr[1].parentNode.removeAttribute("onclick");
             flipArr = [];
         } else {
             ++tries.innerHTML;
             setTimeout( () => {
+                console.log(flipArr[0])
                 flipArr[0].style.display = "none";
                 flipArr[1].style.display = "none";
+                flipArr[0].parentNode.removeAttribute("class");
+                flipArr[1].parentNode.removeAttribute("class");
                 flipArr = [];
                 flipCt = 0;
             }, 800);
