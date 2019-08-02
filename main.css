@@ -46,7 +46,7 @@ sqr p {
     transition-delay: all 3s;
 }
 .flipped {
-    box-shadow: inset 3px 1px 8px 1px rgba(103, 103, 103, 0.75);
+    box-shadow: inset 6px 2px 8px 4px rgba(103, 103, 103, 0.75);
     transition: all .8s;
 }
 ul {
