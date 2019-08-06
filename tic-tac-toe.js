@@ -22,7 +22,7 @@ let container = document.querySelector('.tic-tac-container');
 // Declare turn DOM element
 let move_html = document.createElement('p');
 
-move_html.innerHTML = `Current move: ${move}`;
+move_html.innerHTML = `Turn: ${move}`;
 move_html.classList.add('game_turn')
 container.parentNode.insertBefore(move_html, container.nextSibling);
 
