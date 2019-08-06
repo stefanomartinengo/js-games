@@ -92,3 +92,130 @@ header a:hover {
     transition: all .4s;
     color: rgb(129, 180, 224);
 }
+
+/* Tic-Tac-Toe */
+/* html {
+    max-height: 100vh;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+  }
+  body {
+    max-height: 100%;
+    position: relative;
+    box-sizing: border-box;
+  } */
+.tic-tac-container {
+    margin-top:10px;
+    margin-left: 225px;
+
+    height: 300px;
+    width: 300px;
+    box-shadow: 0 12px 17px 0 rgba(105, 105, 105, 0.2), 0 6px 20px 0 rgba(105, 105, 105, 0.19);
+    padding:15px;
+    border-radius: 5px;
+    }
+.tic-tac {
+    height: calc(50vh - 10px);
+    border: 1px solid lightgray;
+    box-sizing: border-box;
+}
+.sqr {
+    font-size: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+  }
+  .sqr:hover {
+    transition: all .2s ease;
+    background: lightgray;
+  }
+div[id |="t"], div[id |="c"] {
+    border-bottom: .25px solid black;
+}
+div[id $="l"] {
+    border-right: .25px solid black;
+}
+div[id $="-r"] {
+    border-left: .25px solid black;
+}
+.row {
+    display: flex;
+}
+.x {
+display: none;
+}
+.hide {
+    display: none;
+}
+.visible {
+    display: visible;
+}
+.active_slot {
+    height: 75px;
+    width: 75px;
+    border: 2px solid black;
+    border-radius: 50%;
+    margin: auto;
+}
+/* .meta {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 5px;
+    height:200px;
+    width: 150px;
+    padding:10px;
+    box-shadow: 0 12px 17px 0 rgba(105, 105, 105, 0.2), 0 6px 20px 0 rgba(105, 105, 105, 0.19);
+    border: .75px solid #C0C0C0;
+} */
+.sqr:hover > #crcl {
+    border-radius: 50%;
+    height:75px;
+    width:75px;
+    border:2px solid black;
+    margin: auto;
+}
+.game_turn {
+    margin-top: 25px;
+    font-size: 1.25em;
+    color: gray;
+    margin-left: 225px;
+}
+.resetAll {
+    position: absolute;
+    outline: none;
+    bottom: 0px;
+    right: 0px;
+    color: #CD5C5C;
+    margin: 5px;
+    border-color: #CD5C5C;
+    border-radius: 5px;
+}
+.resetAll:hover {
+    transition:all .3s ease;
+    outline: none;
+    background-color: #CD5C5C;
+    color: white;
+}
+.reset {
+    width: 100%;
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
+    margin-bottom:15px;
+    border-radius: 5px;
+    border: 2px solid #C0C0C0;
+    background: #FFFFFF;
+    color: #C0C0C0;
+    border-color: #C0C0C0;
+}
+.reset:hover {
+transition: all .5s ease;
+border-color: #C0C0C0;
+background: #C0C0C0;
+color: #FFFFFF;
+}
+/* Tic-Tac-Toe */

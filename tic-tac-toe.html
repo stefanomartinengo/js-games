@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="stylesheet" href="reset.css"> -->
+    <link rel="stylesheet" href="main.css">
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+    <section>
+        <header>
+            <h3> Tic-Tac-Toe </h3>
+            <h5> <a href="index.html"> <  </a></h5>
+        </header>
+    <div class="tic-tac">
+        <div class="tic-tac-container">
+          <div class="row">
+            <div data-grid="0" onclick="set(event)" class="sqr" id="t-l">
+            </div>
+            <div data-grid="1" onclick="set(event)" class="sqr" id="t-c">
+            </div>
+            <div data-grid="2" onclick="set(event)" class="sqr" id="t-r">
+            </div>
+          </div>
+          <div class="row">
+            <div data-grid="3" onclick="set(event)" class="sqr" id="c-l">
+            </div>
+            <div data-grid="4" onclick="set(event)" class="sqr" id="c-c">
+            </div>
+            <div data-grid="5" onclick="set(event)" class="sqr" id="c-r">
+            </div>
+          </div>
+          <div class="row">
+            <div data-grid="6" onclick="set(event)" class="sqr" id="b-l">
+            </div>
+            <div data-grid="7" onclick="set(event)" class="sqr" id="b-c">
+            </div>
+            <div data-grid="8" onclick="set(event)" class="sqr" id="b-r">
+            </div>
+          </div>
+        </div>
+        <div class="meta">
+          <button onclick="reset()" class="reset">
+            NEW BOARD
+          </button>
+          <p x-wins> X wins: </p>
+          <p y-wins> Y wins: </p>
+          <button class="resetAll" onclick="hardReset()">
+            CLEAR
+          </button>
+        </div>
+      </div>
+      <script src="./tic-tac-toe.js"></script>
+</body>
+</html>
