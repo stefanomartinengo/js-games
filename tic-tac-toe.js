@@ -74,6 +74,7 @@ var checkForWin = (move) => {
 
 // Each cell's click event will fire this function
 var set = (event) => {
+  alert('fuck you')
   if(!game_finished) {
   let cell = event.path[0].attributes['data-grid'].value;
   let str = `[data-grid=${cell}]`;
