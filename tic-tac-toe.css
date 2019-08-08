@@ -21,6 +21,9 @@
     height: 83px;
     width: 85px;
 }
+sqr {
+    cursor: pointer;
+}
 /* .sqr:hover {
     transition: all .2s ease;
     background: lightgray;
