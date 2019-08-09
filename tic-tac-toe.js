@@ -44,36 +44,8 @@ var loopSuccess = (arrayToCheck) => {
   }
   }
 }
-
-var checkForWin = (move) => {
-  let set = [];
-  let containerRows = Array.from(document.getElementsByClassName('tic-tac-container')[0].children);
-  containerRows.forEach( row => {
-    (Array.from(row.children)).forEach( row_el => {
-      if(row_el.innerHTML === move) {
-        set.push(Number(row_el.getAttribute('data-grid')));
-      };
-    });
-  });
-  if(set.length >= 3) {
-    let validateWin = loopSuccess(set);
-    if(validateWin) {
-      let container = document.querySelector('.tic-tac-container');
-      winner_html.innerHTML = `Player ${move} is the Winner!`;
-      if(move === 'X') {
-        ++x_tally
-        x_tally_html.innerHTML = 'X wins: ' + x_tally;
-      } else {
-        ++o_tally;
-        o_tally_html.innerHTML = 'O wins: ' + o_tally;
-      }
-      container.parentNode.insertBefore(winner_html, container.previousSibling);
-    }
-  }
-};
-
 // Each cell's click event will fire this function
-var set = (event) => {
+var ugh = (event) => {
   alert('fuck you')
   if(!game_finished) {
   let cell = event.path[0].attributes['data-grid'].value;
@@ -102,6 +74,32 @@ var set = (event) => {
       container.parentNode.insertBefore(loser_html, container.previousSibling);
   }
 }
+};
+var checkForWin = (move) => {
+  let set = [];
+  let containerRows = Array.from(document.getElementsByClassName('tic-tac-container')[0].children);
+  containerRows.forEach( row => {
+    (Array.from(row.children)).forEach( row_el => {
+      if(row_el.innerHTML === move) {
+        set.push(Number(row_el.getAttribute('data-grid')));
+      };
+    });
+  });
+  if(set.length >= 3) {
+    let validateWin = loopSuccess(set);
+    if(validateWin) {
+      let container = document.querySelector('.tic-tac-container');
+      winner_html.innerHTML = `Player ${move} is the Winner!`;
+      if(move === 'X') {
+        ++x_tally
+        x_tally_html.innerHTML = 'X wins: ' + x_tally;
+      } else {
+        ++o_tally;
+        o_tally_html.innerHTML = 'O wins: ' + o_tally;
+      }
+      container.parentNode.insertBefore(winner_html, container.previousSibling);
+    }
+  }
 };
 
 var reset = () => {
