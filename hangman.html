@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/hangman.css">
+    <title>Hangman</title>
+</head>
+<body>
+    <section>
+        <header>
+            <h3> Hangman </h3>
+            <h5> <a href="index.html"> <  </a></h5>
+        </header>
+        <div class="hangman">
+                <div>
+                  <input id="word" placeholder="pick your word" />
+                  <button id="set_word" onclick="setWord()" type="submit" class="g-btn"> START </button>
+                  <button id="clear_word" onclick="clearWord()" type="submit" class="reset-btn"> RESET </button>
+                </div>
+                <div>
+                  <input id="letter" class="letter_input" />
+                  <button id="guess_letter" onclick="guessLetter(event)" type="submit" class="btn"> GUESS </button>
+                </div>
+                <div id="word_display"></div>
+                <!-- WIN OR LOSE -->
+                <div id="win_lose" class="hidden"></div>
+                <!-- WIN OR LOSE -->
+                <!-- HANGMAN -->
+                <div id="container" class="container">
+                  <div id="face" class="face">
+                    <div class="innerface"></div>
+                  </div>
+                  <div class="body">
+                    <div id="leftarm" class="leftarm"></div>
+                    <div id="torso" class="torso"></div>
+                    <div id="rightarm" class="rightarm"></div>
+                  </div>
+                  <div class="feet">
+                    <div id="leftleg" class="leftleg"></div>
+                    <div id="rightleg" class="rightleg"></div>
+                  </div>
+                </div>
+                <!-- HANGMAN -->
+                <div id="letters" class="letters"></div>
+                <div id="alphabet" class="alphabet"></div>
+              </div>
+    </section>
+    <script src="hangman.js"></script>
+</body>
+</html>

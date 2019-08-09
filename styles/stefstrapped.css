@@ -1,5 +1,6 @@
-.mb-3 {
+.list-el {
     margin-bottom: 3px;
+    margin:3px;
+    padding:10px;
     box-shadow: 3px 1px 8px 1px rgba(103, 103, 103, 0.75);
-
 }
