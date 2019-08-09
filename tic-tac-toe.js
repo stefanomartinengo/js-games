@@ -8,14 +8,14 @@ var o_tally = 0;
 let x_tally_html = document.querySelector('[x-wins]');
 let o_tally_html = document.querySelector('[y-wins]');
 let winner_html = document.createElement('p');
-  winner_html.classList.add('game_over');
+winner_html.classList.add('game_over');
 x_tally_html.innerHTML += x_tally;
 o_tally_html.innerHTML += o_tally;
 
 var move = 'X';
 var winner = null;
 var boardFilled = 0 // Out of 9;
-winner_html;
+// winner_html;
 
 // Declare container DOM element;
 let container = document.querySelector('.tic-tac-container');
@@ -45,11 +45,11 @@ var loopSuccess = (arrayToCheck) => {
   }
 }
 // Each cell's click event will fire this function
-var ugh = (event) => {
-  alert('fuck you')
+function ugh(event) {
   if(!game_finished) {
   let cell = event.path[0].attributes['data-grid'].value;
   let str = `[data-grid=${cell}]`;
+  alert(event.target.innerHTML)
     if(event.target.innerHTML === 'X' || event.target.innerHTML === 'O') {
       return;
     }
