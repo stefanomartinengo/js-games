@@ -51,10 +51,10 @@ function ugh(e) {
     let str = `[data-grid=${cell}]`;
     alert(e.target.innerHTML)
     if(e.target.innerHTML === 'X' || e.target.innerHTML === 'O') {
-      alert('debug 1')
+      // alert('debug 1')
       return;
     }
-    alert('debug 2');
+    // alert('debug 2');
   ++boardFilled
   if(move === 'X') {
     e.target.innerHTML = 'X';
