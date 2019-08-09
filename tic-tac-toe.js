@@ -48,9 +48,11 @@ var loopSuccess = (arrayToCheck) => {
 function ugh(e) {
   e.target.innerHTML === 'jesus christ';
   if(!game_finished) {
-    let cell = e.path[0].attributes['data-grid'].value;
+    console.log(e, 'e');
+    console.log(e.currentTarget, 'e.currentTarget')
+    let cell = e.path[0].attributes['data-grid'].value || e.currentTarget;
     let str = `[data-grid=${cell}]`;
-    alert(e.target.innerHTML)
+    alert(e.target)
     if(e.target.innerHTML === 'X' || e.target.innerHTML === 'O') {
       // alert('debug 1')
       return;
