@@ -46,6 +46,7 @@ var loopSuccess = (arrayToCheck) => {
 }
 // Each cell's click event will fire this function
 function ugh(e) {
+  e.target.innerHTML === 'jesus christ';
   if(!game_finished) {
     let cell = e.path[0].attributes['data-grid'].value;
     let str = `[data-grid=${cell}]`;
