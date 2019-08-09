@@ -47,9 +47,9 @@ var loopSuccess = (arrayToCheck) => {
 // Each cell's click event will fire this function
 function ugh(e) {
   if(!game_finished) {
+    alert('hey')
   let cell = e.path[0].attributes['data-grid'].value;
   let str = `[data-grid=${cell}]`;
-  alert(e.target.innerHTML)
     if(e.target.innerHTML === 'X' || e.target.innerHTML === 'O') {
       return;
     }
