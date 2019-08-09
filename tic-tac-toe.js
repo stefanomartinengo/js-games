@@ -21,7 +21,7 @@ var boardFilled = 0 // Out of 9;
 let container = document.querySelector('.tic-tac-container');
 // Declare turn DOM element
 let move_html = document.createElement('p');
-
+move_html.style.marginLeft = "25px";
 move_html.innerHTML = `Turn: ${move}`;
 move_html.classList.add('game_turn')
 container.parentNode.insertBefore(move_html, container.nextSibling);
@@ -47,22 +47,17 @@ var loopSuccess = (arrayToCheck) => {
 // Each cell's click event will fire this function
 function set(e) {
   if(!game_finished) {
-    let cell;
-    if(!e.path) {
-      cell = e.currentTarget.attributes['data-grid'].value
-    } else {
-      cell = e.path[0].attributes['data-grid'].value;
-    }
+    let cell = e.currentTarget.attributes['data-grid'].value
     let str = `[data-grid=${cell}]`;
     if(e.target.innerHTML === 'X' || e.target.innerHTML === 'O') {
       return;
     }
-    // alert('debug 2');
   ++boardFilled
   if(move === 'X') {
     e.target.innerHTML = 'X';
     let win = checkForWin(move);
     move = 'O'
+    move_html.style.marginLeft = "25px";
     move_html.innerHTML = 'Turn:' + ' ' + move;
   } else {
     e.target.innerHTML = 'O';
@@ -74,7 +69,7 @@ function set(e) {
   if(boardFilled === 9 && !winner) { // Need to check if its draw, or winner exists, dont display draw
     game_finished = true;
     let loser_html = document.createElement('p');
-      loser_html.classList.add('game_over')
+      loser_html.classList.add('game_over');
       loser_html.innerHTML = `Draw, try again?`;
       container.parentNode.insertBefore(loser_html, container.previousSibling);
   }
@@ -94,6 +89,7 @@ var checkForWin = (move) => {
     let validateWin = loopSuccess(set);
     if(validateWin) {
       let container = document.querySelector('.tic-tac-container');
+      winner_html.classList.add('game_winner');
       winner_html.innerHTML = `Player ${move} is the Winner!`;
       if(move === 'X') {
         ++x_tally
