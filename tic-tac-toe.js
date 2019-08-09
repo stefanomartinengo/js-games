@@ -45,16 +45,16 @@ var loopSuccess = (arrayToCheck) => {
   }
 }
 // Each cell's click event will fire this function
-function ugh(e) {
-  e.target.innerHTML === 'jesus christ';
+function set(e) {
   if(!game_finished) {
-    console.log(e, 'e');
-    console.log(e.currentTarget, 'e.currentTarget')
-    let cell = e.path[0].attributes['data-grid'].value || e.currentTarget;
+    let cell;
+    if(!e.path) {
+      cell = e.currentTarget.attributes['data-grid'].value
+    } else {
+      cell = e.path[0].attributes['data-grid'].value;
+    }
     let str = `[data-grid=${cell}]`;
-    alert(e.target)
     if(e.target.innerHTML === 'X' || e.target.innerHTML === 'O') {
-      // alert('debug 1')
       return;
     }
     // alert('debug 2');
@@ -63,12 +63,12 @@ function ugh(e) {
     e.target.innerHTML = 'X';
     let win = checkForWin(move);
     move = 'O'
-    move_html.innerHTML = 'Current move:' + ' ' + move;
+    move_html.innerHTML = 'Turn:' + ' ' + move;
   } else {
     e.target.innerHTML = 'O';
     let win = checkForWin(e.target.innerHTML);
     move = 'X';
-    move_html.innerHTML = 'Current move:' + ' ' + move;
+    move_html.innerHTML = 'Turn:' + ' ' + move;
   }
   // IN case of DRAW
   if(boardFilled === 9 && !winner) { // Need to check if its draw, or winner exists, dont display draw
@@ -115,7 +115,7 @@ var reset = () => {
     });
   })
   move = 'X';
-  move_html.innerHTML = 'Current move: X';
+  move_html.innerHTML = 'Turn: X';
   boardFilled = 0;
   winner = null;
   game_finished = false;
