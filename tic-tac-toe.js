@@ -45,23 +45,23 @@ var loopSuccess = (arrayToCheck) => {
   }
 }
 // Each cell's click event will fire this function
-function ugh(event) {
+function ugh(e) {
   if(!game_finished) {
-  let cell = event.path[0].attributes['data-grid'].value;
+  let cell = e.path[0].attributes['data-grid'].value;
   let str = `[data-grid=${cell}]`;
-  alert(event.target.innerHTML)
-    if(event.target.innerHTML === 'X' || event.target.innerHTML === 'O') {
+  alert(e.target.innerHTML)
+    if(e.target.innerHTML === 'X' || e.target.innerHTML === 'O') {
       return;
     }
   ++boardFilled
   if(move === 'X') {
-    event.target.innerHTML = 'X';
+    e.target.innerHTML = 'X';
     let win = checkForWin(move);
     move = 'O'
     move_html.innerHTML = 'Current move:' + ' ' + move;
   } else {
-    event.target.innerHTML = 'O';
-    let win = checkForWin(event.target.innerHTML);
+    e.target.innerHTML = 'O';
+    let win = checkForWin(e.target.innerHTML);
     move = 'X';
     move_html.innerHTML = 'Current move:' + ' ' + move;
   }
