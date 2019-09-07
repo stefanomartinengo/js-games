@@ -25,6 +25,7 @@ alphabet.forEach( alph => {
 });
 
 var clearWord =  function() {
+    console.log('clearWord')
     // Need to re-add word_display div element
     document.getElementById('word').value = "";
     word = "";
@@ -36,17 +37,25 @@ var clearWord =  function() {
     setWrdBtn.classList.remove('reset-btn')
 }
 function setWord() {
+    console.log('setWord')
     let setWordBtn = document.getElementById('set_word');
     setWordBtn.classList.add('reset-btn');
     setWordBtn.setAttribute("onClick", "clearWord()");
     setWordBtn.innerHTML = "RESET";
     let setWord = document.getElementById('word').value;
     word = setWord;
-    document.getElementById('word').setAttribute("type", "password")
+    document.getElementById('word').setAttribute("type", "password");
+    console.log('set word here?')
     word.split('').forEach( e => {
+        if(e === ' ') {
+            console.log('space')
+        }
         var div_node = document.createElement("div");
         var child_node = document.createElement("p");
         var textnode = document.createTextNode(e.toUpperCase());
+        if(e === ' ') {
+            div_node.classList.add("space")
+        }
         div_node.classList.add("word_display_block");
         child_node.style.display = "none";
         div_node.appendChild(child_node);
