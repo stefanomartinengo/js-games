@@ -68,6 +68,7 @@ input {
     max-height:75px;
     max-width: 100%;
     margin-top: 35px;
+    height: 17.5px;
 }
 #word_display p {
     height:6px;
@@ -75,9 +76,14 @@ input {
     padding: 2px;
     margin: 2px;
 }
+#win_lose {
+    margin-left: 20px;
+    margin-top: 10px;
+}
 .word_display_block {
     width:35px;
     margin: 4px;
+    height: 17.5px;
     border-bottom: 1.5px solid gray;
 }
 .btn {
